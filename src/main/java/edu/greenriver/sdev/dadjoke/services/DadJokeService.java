@@ -23,11 +23,11 @@ public class DadJokeService {
         repository.save(dadJoke);
     }
 
-    public void updateJoke(int id, String jokeText) {
+    public DadJoke updateJoke(int id, String jokeText) {
         DadJoke currentDadJoke = repository.findById(id).orElseThrow();
 
         currentDadJoke.setJokeText(jokeText);
-        repository.save(currentDadJoke);
+        return repository.save(currentDadJoke);
     }
 
     public void deleteDadJoke(int id) {
